@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eNavvi Content Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0066CC 0%, #00A9A5 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #0066CC;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section h2 {
+            font-size: 20px;
+            color: #0066CC;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #0066CC;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .btn {
+            background: #00A9A5;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.1s;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #008b87;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-primary {
+            background: #0066CC;
+        }
+
+        .btn-primary:hover {
+            background: #0052a3;
+        }
+
+        .results {
+            margin-top: 40px;
+        }
+
+        .result-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 4px solid #0066CC;
+        }
+
+        .result-card h3 {
+            color: #0066CC;
+            margin-bottom: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .result-card pre {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            border: 1px solid #e0e0e0;
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .stat-item strong {
+            color: #0066CC;
+        }
+
+        .copy-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: background 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: #218838;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .loading::after {
+            content: "...";
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: "."; }
+            40% { content: ".."; }
+            60%, 100% { content: "..."; }
+        }
+
+        .preset-topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .preset-btn {
+            background: #f0f0f0;
+            border: 2px solid #e0e0e0;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            text-align: left;
+        }
+
+        .preset-btn:hover {
+            background: #e8f4f8;
+            border-color: #0066CC;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .checkbox-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 eNavvi Content Generator</h1>
+            <p>Professional healthcare marketing content creation tool</p>
+        </div>
+
+        <div class="content">
+            <div class="form-section">
+                <h2>📝 Content Configuration</h2>
+
+                <label for="context">Content Topic/Context</label>
+                <textarea id="context" placeholder="E.g., 'GLP-1 shortage solutions' or 'compound semaglutide for weight management'">GLP-1 shortage solutions for weight management</textarea>
+
+                <div style="margin-top: 15px;">
+                    <label>Quick Topic Presets</label>
+                    <div class="preset-topics">
+                        <button class="preset-btn" onclick="setContext('GLP-1 shortage solutions')">GLP-1 Shortages</button>
+                        <button class="preset-btn" onclick="setContext('Compound semaglutide for weight management')">Compound Semaglutide</button>
+                        <button class="preset-btn" onclick="setContext('Prescription drug price transparency')">Price Transparency</button>
+                        <button class="preset-btn" onclick="setContext('Tirzepatide compounding alternatives')">Tirzepatide Alternatives</button>
+                        <button class="preset-btn" onclick="setContext('Personalized medicine through compounding')">Personalized Medicine</button>
+                        <button class="preset-btn" onclick="setContext('Drug shortage solutions for clinicians')">Drug Shortage Solutions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>🎯 Platform Selection</h2>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="platform-linkedin" checked>
+                        <label for="platform-linkedin">LinkedIn (Professional)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="platform-twitter">
+                        <label for="platform-twitter">Twitter/X (280 chars)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="platform-instagram">
+                        <label for="platform-instagram">Instagram (Visual)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="generate-images" checked>
+                        <label for="generate-images">Image Prompts</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>🎨 Image Generation Style</h2>
+                <select id="image-style">
+                    <option value="midjourney">Midjourney (Recommended)</option>
+                    <option value="dalle">DALL-E 3</option>
+                    <option value="stable-diffusion">Stable Diffusion</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label for="custom-hook">Custom Opening Hook (Optional)</label>
+                <input type="text" id="custom-hook" placeholder="E.g., '73% of clinics report GLP-1 shortages. Here's the solution.'">
+            </div>
+
+            <div class="form-section">
+                <button class="btn btn-primary" onclick="generateContent()">Generate Content 🎯</button>
+                <button class="btn" onclick="generateCampaign()">Generate Full Campaign 🚀</button>
+                <button class="btn" onclick="clearResults()">Clear Results</button>
+            </div>
+
+            <div id="results" class="results hidden"></div>
+        </div>
+    </div>
+
+    <script>
+        // Brand configuration and content templates
+        const brandConfig = {
+            hooks: {
+                'glp-1': [
+                    "**73% of clinics** report GLP-1 medication shortages affecting patient care. There's a better path forward.",
+                    "When your patient needs semaglutide today, but the supply chain says 'maybe next month'—what do you prescribe?",
+                    "GLP-1 shortages shouldn't mean treatment delays. Here's what forward-thinking clinicians are doing differently."
+                ],
+                'semaglutide': [
+                    "Compound semaglutide is helping clinicians maintain continuity of care during ongoing shortages.",
+                    "**$1,200+/month** for brand semaglutide vs. accessible compound alternatives. The math matters for patient adherence.",
+                    "Your patients are asking about semaglutide. Are you prepared with cost-effective, quality-assured options?"
+                ],
+                'pricing': [
+                    "**86% of patients** cite cost as a barrier to medication adherence. Transparency changes that conversation.",
+                    "What if your patients knew the real cost before leaving your office? Prescribing would look different.",
+                    "Price opacity in pharmaceuticals isn't just frustrating—it's a clinical barrier to adherence."
+                ],
+                'default': [
+                    "Prescribing shouldn't be complicated. But getting patients affordable, quality medications? That's been the challenge.",
+                    "What if prescribing came with price transparency, quality assurance, and zero platform fees?",
+                    "Modern prescribing requires modern tools. Here's what's changing in digital healthcare."
+                ]
+            },
+
+            hashtags: {
+                linkedin: ['#DigitalHealth', '#HealthcareInnovation', '#CompoundPharmacy', '#Telemedicine', '#PhysicianLeadership'],
+                twitter: ['#HealthTech', '#DigitalHealth', '#CompoundRx', '#DrugPricing', '#HealthcareAccess'],
+                instagram: ['#HealthcareHeroes', '#MedicalCommunity', '#PhysicianLife', '#HealthcareInnovation', '#PatientFirst']
+            }
+        };
+
+        function setContext(topic) {
+            document.getElementById('context').value = topic;
+        }
+
+        function getHook(context) {
+            const contextLower = context.toLowerCase();
+            for (const key in brandConfig.hooks) {
+                if (contextLower.includes(key)) {
+                    const hooks = brandConfig.hooks[key];
+                    return hooks[Math.floor(Math.random() * hooks.length)];
+                }
+            }
+            return brandConfig.hooks.default[0];
+        }
+
+        function generateLinkedInPost(context, customHook = '') {
+            const hook = customHook || getHook(context);
+
+            const body = context.toLowerCase().includes('glp-1') || context.toLowerCase().includes('semaglutide') ?
+                `The ongoing GLP-1 shortage has created real challenges for clinicians managing obesity and metabolic health. While brand medications face supply constraints, quality-assured compound alternatives are available through verified pharmacy networks.
+
+Key considerations:
+• **Compound semaglutide** follows the same molecular structure as brand versions
+• Dosing protocols align with published clinical guidelines
+• Cost transparency helps patients maintain treatment adherence
+• Access through platforms that integrate with existing e-prescribing workflows
+
+Treatment continuity shouldn't depend on supply chain luck. eNavvi connects clinicians to quality-assured compound pharmacy partners with real-time pricing transparency—at no cost to your practice.` :
+                `eNavvi is transforming how clinicians prescribe by providing transparency, quality assurance, and cost-effective options for patients.
+
+Our platform offers:
+• **Zero fees** for prescribers—completely free to use
+• Real-time pricing for brand, generic, and compound medications
+• Quality-assured pharmacy network with verified compliance
+• Seamless e-prescribing integration
+• Clinical support and dosing protocols
+
+${context}
+
+Join the growing network of clinicians who are prescribing smarter, not harder.`;
+
+            const cta = "Learn more about prescriber-friendly compound solutions at eNavvi.com";
+            const hashtags = brandConfig.hashtags.linkedin.slice(0, 5).join(' ');
+
+            const postText = `${hook}\n\n${body}\n\n${cta}\n\n${hashtags}`;
+
+            return {
+                postText,
+                wordCount: postText.split(/\s+/).length,
+                charCount: postText.length
+            };
+        }
+
+        function generateTwitterPost(context) {
+            const tweets = {
+                'glp-1': "GLP-1 shortages? Compound semaglutide offers quality-assured alternatives. eNavvi connects prescribers to transparent pricing + vetted pharmacies. Free for clinicians. #HealthTech #DrugShortage",
+                'pricing': "What if patients knew prescription costs before leaving your office? eNavvi brings real-time pricing to prescribing—free for clinicians. #HealthcareAccess #DrugPricing",
+                'default': `Prescribe smarter: eNavvi offers free digital platform for clinicians with transparent drug pricing + quality pharmacy network. ${context.substring(0, 80)} #HealthTech #DigitalHealth`
+            };
+
+            const contextLower = context.toLowerCase();
+            for (const key in tweets) {
+                if (contextLower.includes(key)) {
+                    return tweets[key];
+                }
+            }
+            return tweets.default;
+        }
+
+        function generateInstagramCaption(context) {
+            const hashtags = brandConfig.hashtags.instagram.slice(0, 8).join(' ');
+
+            return `Quality healthcare shouldn't come with surprise bills.
+
+eNavvi is changing prescribing by bringing transparency, affordability, and choice to clinicians and patients alike.
+
+✨ Free for prescribers
+✨ Real-time pricing
+✨ Quality-assured pharmacies
+✨ Compound medication access
+
+${context}
+
+Because better prescribing starts with better tools.
+
+Link in bio to learn more. 💙
+
+${hashtags}`;
+        }
+
+        function generateImagePrompt(context, style) {
+            const baseStyle = "Professional healthcare photography, clean and modern aesthetic, medical blue and white color palette with teal accents, high-quality lighting, trustworthy and approachable mood";
+
+            let prompt = context.toLowerCase().includes('glp-1') || context.toLowerCase().includes('semaglutide') ?
+                `Healthcare provider consulting with patient about weight management treatment options, modern clinic setting, digital tablet showing prescription interface, warm and professional atmosphere. ${baseStyle}.` :
+                `Modern physician using tablet for e-prescribing, patient consultation in contemporary medical office, seamless technology integration, trust and innovation conveyed. ${baseStyle}.`;
+
+            if (style === 'midjourney') {
+                prompt += " --ar 16:9 --style raw --v 6 --q 2";
+            } else if (style === 'dalle') {
+                prompt += " Photorealistic, 4K quality, professional photography.";
+            } else if (style === 'stable-diffusion') {
+                prompt += ", highly detailed, professional photography, 8k uhd, dslr, high quality, film grain, Fujifilm XT3";
+            }
+
+            return prompt;
+        }
+
+        function generateContent() {
+            const context = document.getElementById('context').value;
+            const customHook = document.getElementById('custom-hook').value;
+            const imageStyle = document.getElementById('image-style').value;
+
+            const generateLinkedIn = document.getElementById('platform-linkedin').checked;
+            const generateTwitter = document.getElementById('platform-twitter').checked;
+            const generateInsta = document.getElementById('platform-instagram').checked;
+            const generateImages = document.getElementById('generate-images').checked;
+
+            let resultsHTML = '';
+
+            if (generateLinkedIn) {
+                const linkedin = generateLinkedInPost(context, customHook);
+                resultsHTML += `
+                    <div class="result-card">
+                        <h3>
+                            💼 LinkedIn Post
+                            <button class="copy-btn" onclick="copyToClipboard('linkedin-content')">Copy</button>
+                        </h3>
+                        <pre id="linkedin-content">${linkedin.postText}</pre>
+                        <div class="stats">
+                            <div class="stat-item"><strong>${linkedin.wordCount}</strong> words</div>
+                            <div class="stat-item"><strong>${linkedin.charCount}</strong> characters</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (generateTwitter) {
+                const twitter = generateTwitterPost(context);
+                resultsHTML += `
+                    <div class="result-card">
+                        <h3>
+                            🐦 Twitter/X Post
+                            <button class="copy-btn" onclick="copyToClipboard('twitter-content')">Copy</button>
+                        </h3>
+                        <pre id="twitter-content">${twitter}</pre>
+                        <div class="stats">
+                            <div class="stat-item"><strong>${twitter.length}</strong> / 280 characters</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (generateInsta) {
+                const instagram = generateInstagramCaption(context);
+                resultsHTML += `
+                    <div class="result-card">
+                        <h3>
+                            📸 Instagram Caption
+                            <button class="copy-btn" onclick="copyToClipboard('instagram-content')">Copy</button>
+                        </h3>
+                        <pre id="instagram-content">${instagram}</pre>
+                        <div class="stats">
+                            <div class="stat-item">Format: <strong>1080x1080px</strong> (square)</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (generateImages) {
+                const imagePrompt = generateImagePrompt(context, imageStyle);
+                resultsHTML += `
+                    <div class="result-card">
+                        <h3>
+                            🎨 Image Generation Prompt (${imageStyle})
+                            <button class="copy-btn" onclick="copyToClipboard('image-prompt')">Copy</button>
+                        </h3>
+                        <pre id="image-prompt">${imagePrompt}</pre>
+                        <div class="stats">
+                            <div class="stat-item">Tool: <strong>${imageStyle}</strong></div>
+                            <div class="stat-item">Recommended: <strong>1200x627px</strong> (LinkedIn)</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = resultsHTML;
+            resultsDiv.classList.remove('hidden');
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function generateCampaign() {
+            // Check all platforms
+            document.getElementById('platform-linkedin').checked = true;
+            document.getElementById('platform-twitter').checked = true;
+            document.getElementById('platform-instagram').checked = true;
+            document.getElementById('generate-images').checked = true;
+
+            generateContent();
+        }
+
+        function clearResults() {
+            document.getElementById('results').classList.add('hidden');
+            document.getElementById('results').innerHTML = '';
+        }
+
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+
+            navigator.clipboard.writeText(text).then(() => {
+                // Visual feedback
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = '✓ Copied!';
+                btn.style.background = '#28a745';
+
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                }, 2000);
+            }).catch(err => {
+                alert('Failed to copy text. Please copy manually.');
+            });
+        }
+    </script>
+</body>
+</html>

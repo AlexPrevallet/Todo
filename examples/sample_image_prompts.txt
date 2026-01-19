@@ -1,0 +1,127 @@
+eNavvi Image Generation Prompts
+Generated: 2026-01-19
+
+================================================================================
+PROMPT 1: GLP-1 Shortage Solutions (Midjourney)
+================================================================================
+
+Professional medical consultation scene, diverse physician and patient discussing
+weight management options on digital tablet showing prescription interface, modern
+clinic with soft natural lighting through windows, medical blue and teal color
+palette, emphasis on trust and innovation, photorealistic medical photography,
+clean and organized environment --ar 16:9 --style raw --v 6 --q 2
+
+Platform: LinkedIn
+Size: 1200x627px
+Format: PNG or JPEG
+Purpose: GLP-1 shortage solutions content
+
+================================================================================
+PROMPT 2: Prescription Price Transparency (DALL-E 3)
+================================================================================
+
+Professional infographic-style image showing prescription drug price transparency
+concept. Left half shows old paper prescription with hidden costs (faded, confused
+patient expression), right half shows bright modern digital screen with clear cost
+breakdown and satisfied patient. Medical office background. Clean, modern design
+with medical blue color palette. Photorealistic but with subtle graphic design
+elements. 4K quality.
+
+Platform: LinkedIn / Twitter
+Size: 1200x675px
+Format: PNG
+Purpose: Drug pricing transparency campaign
+
+================================================================================
+PROMPT 3: Compound Pharmacy Quality (Stable Diffusion)
+================================================================================
+
+Pharmaceutical compounding laboratory, sterile clean room environment, professional
+pharmacist preparing customized medication, precision pharmaceutical equipment,
+USP standards compliance visible, quality assurance emphasis, bright clinical
+lighting, medical blue white color palette, highly detailed, professional
+pharmaceutical photography, 8k uhd, dslr, clean aesthetic, high quality, modern
+medical facility
+
+Platform: Instagram / LinkedIn
+Size: 1080x1080px (square) or 1200x627px (landscape)
+Format: JPEG
+Purpose: Compound pharmacy quality assurance content
+
+================================================================================
+PROMPT 4: Digital Prescribing Platform (Midjourney)
+================================================================================
+
+Modern physician using tablet for e-prescribing, close-up of hands on digital
+interface showing medication options with pricing, contemporary medical office
+setting, professional medical attire, warm natural lighting, medical blue and
+teal interface colors on screen, emphasis on ease of use and technology
+integration, professional healthcare photography --ar 16:9 --style raw --v 6 --q 2
+
+Platform: LinkedIn / Facebook
+Size: 1200x630px
+Format: PNG
+Purpose: Digital health technology showcase
+
+================================================================================
+PROMPT 5: Patient Medication Access (DALL-E 3)
+================================================================================
+
+Photorealistic scene of a diverse patient (middle-aged, genuine smile) receiving
+prescription medication from a professional pharmacist across a modern pharmacy
+counter. The medication packaging is clean and professional. Patient appears
+relieved and satisfied, suggesting affordable access. Warm, welcoming lighting.
+Medical blue and white color palette. Professional healthcare photography, 4K
+quality, shallow depth of field, patient-centric composition.
+
+Platform: Instagram / Facebook
+Size: 1080x1350px (portrait)
+Format: JPEG
+Purpose: Patient-focused affordability campaign
+
+================================================================================
+PROMPT 6: Healthcare Innovation Concept (Midjourney)
+================================================================================
+
+Conceptual image blending traditional healthcare with digital innovation, medical
+stethoscope next to modern tablet displaying health technology interface, clean
+white background with medical blue accents, professional product photography style,
+emphasis on merging traditional care with modern tools, high-key lighting
+--ar 16:9 --style raw --v 6 --q 2
+
+Platform: LinkedIn / Website Hero
+Size: 1920x1080px or 1200x627px
+Format: PNG
+Purpose: Brand positioning, innovation messaging
+
+================================================================================
+
+USAGE TIPS:
+
+Midjourney:
+1. Copy prompt into Discord
+2. Type /imagine followed by the prompt
+3. Wait for 4 variations (takes ~60 seconds)
+4. Upscale your favorite with U1, U2, U3, or U4
+5. Use variations (V1-V4) to explore different compositions
+
+DALL-E 3:
+1. Use ChatGPT Plus or API
+2. Paste prompt directly
+3. Request specific adjustments as needed
+4. Download highest resolution available
+5. May need 2-3 iterations for perfect result
+
+Stable Diffusion:
+1. Use web UI (Stability AI, DreamStudio, etc.)
+2. Set steps to 50-75 for quality
+3. CFG scale: 7-10 for prompt adherence
+4. Use negative prompts: "blurry, low quality, amateur, unprofessional"
+5. Generate multiple samples (4-8)
+
+POST-PROCESSING:
+- Resize to exact platform specifications
+- Compress for web (aim for <500KB for faster loading)
+- Add text overlays in Canva, Figma, or Photoshop
+- Test on mobile devices
+- A/B test different variations

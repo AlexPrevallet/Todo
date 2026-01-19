@@ -1,0 +1,273 @@
+{
+  "brand_visual_identity": {
+    "primary_colors": ["Medical Blue #0066CC", "Teal Accent #00A9A5", "Clean White #FFFFFF"],
+    "secondary_colors": ["Warm Gray #F5F5F5", "Professional Navy #1B3A57"],
+    "typography_style": "Clean, modern sans-serif. Professional medical aesthetic.",
+    "photography_style": "Natural lighting, authentic healthcare settings, diverse representation, trustworthy and approachable",
+    "mood": "Professional yet warm, innovative yet trustworthy, clinical yet patient-friendly"
+  },
+
+  "platform_specifications": {
+    "linkedin": {
+      "optimal_size": "1200x627px (og:image) or 1104x736px (shared image)",
+      "aspect_ratio": "1.91:1",
+      "format": "PNG or JPEG",
+      "max_file_size": "5MB",
+      "recommendations": "Professional photography, infographic-style data visualization, minimal text overlay"
+    },
+    "instagram": {
+      "optimal_size": "1080x1080px (square) or 1080x1350px (portrait)",
+      "aspect_ratio": "1:1 or 4:5",
+      "format": "JPEG or PNG",
+      "max_file_size": "30MB",
+      "recommendations": "Vibrant but professional, text overlay for engagement, carousel-friendly designs"
+    },
+    "twitter": {
+      "optimal_size": "1200x675px",
+      "aspect_ratio": "16:9",
+      "format": "PNG or JPEG",
+      "max_file_size": "5MB",
+      "recommendations": "Bold visuals, high contrast, mobile-optimized readability"
+    },
+    "facebook": {
+      "optimal_size": "1200x630px",
+      "aspect_ratio": "1.91:1",
+      "format": "PNG or JPEG",
+      "max_file_size": "8MB",
+      "recommendations": "Similar to LinkedIn, community-focused imagery"
+    }
+  },
+
+  "detailed_prompts": {
+    "glp1_shortage_solution": {
+      "midjourney": "Professional medical consultation scene, diverse physician and patient discussing weight management options on digital tablet showing prescription interface, modern clinic with soft natural lighting through windows, medical blue and teal color palette, emphasis on trust and innovation, photorealistic medical photography, clean and organized environment --ar 16:9 --style raw --v 6 --q 2",
+
+      "dalle3": "Photorealistic scene of a confident healthcare provider in modern clinic showing a patient transparent prescription pricing on a tablet screen. The tablet displays clean interface with medication options including semaglutide. Warm, professional lighting. Medical blue and white color scheme with teal accents. Both provider and patient appear engaged and optimistic. High-quality medical stock photography style, 4K detail, shallow depth of field focusing on the interaction.",
+
+      "stable_diffusion": "Healthcare professional consultation, modern medical office, doctor showing digital prescription platform to patient, transparent medication pricing on screen, weight management discussion, professional medical photography, natural window lighting, medical blue teal white color palette, clean aesthetic, highly detailed, 8k uhd, dslr, soft lighting, high quality, film grain, Fujifilm XT3, professional depth of field",
+
+      "visual_elements": [
+        "Digital tablet or computer screen showing eNavvi interface",
+        "Healthcare provider in professional attire (white coat optional)",
+        "Patient engaged in conversation (diverse representation)",
+        "Modern, clean medical office environment",
+        "Subtle eNavvi branding (not prominent)",
+        "Prescription medication vial or packaging (professional quality)",
+        "Data visualization showing cost comparison (optional)"
+      ]
+    },
+
+    "prescription_price_transparency": {
+      "midjourney": "Split composition infographic style, left side: traditional prescription pad with crossed-out dollar signs and question marks in red, right side: modern digital interface displaying clear pricing in green checkmarks, clean professional medical setting, medical blue and teal brand colors, high contrast, editorial medical photography style --ar 16:9 --style raw --v 6 --q 2",
+
+      "dalle3": "Professional infographic-style image showing prescription drug price transparency concept. Left half shows old paper prescription with hidden costs (faded, confused patient expression), right half shows bright modern digital screen with clear cost breakdown and satisfied patient. Medical office background. Clean, modern design with medical blue color palette. Photorealistic but with subtle graphic design elements. 4K quality.",
+
+      "stable_diffusion": "Medical price transparency concept, split screen comparison, traditional prescription process vs digital transparent pricing, professional healthcare photography, clean infographic aesthetic, medical professional presenting cost information clearly to patient, modern clinic interior, medical blue teal white colors, highly detailed, professional photography, 8k uhd, soft professional lighting, high quality, editorial style",
+
+      "visual_elements": [
+        "Before/after or comparison visual structure",
+        "Clear cost numbers displayed prominently",
+        "Confused vs. confident patient expressions",
+        "Traditional paper Rx vs. digital interface",
+        "Checkmarks or positive symbols for transparency",
+        "Professional but accessible design",
+        "Data visualization (bar charts, price comparisons)"
+      ]
+    },
+
+    "compound_pharmacy_quality": {
+      "midjourney": "Sterile compound pharmacy clean room, professional pharmacist in clean room attire working with precision compounding equipment, USP 795 797 compliance visible on wall certificates, modern pharmaceutical lab environment, emphasis on quality control and safety, bright clean lighting, medical blue and white color palette, professional pharmaceutical photography --ar 16:9 --style raw --v 6 --q 2",
+
+      "dalle3": "Professional photograph of a modern compounding pharmacy sterile clean room. Pharmacist in proper clean room attire (hair net, mask, lab coat) carefully preparing customized medication using precision equipment. Background shows quality control instruments and USP compliance certificates. Bright, clean lighting emphasizes sterility and professionalism. Medical blue and white color scheme. Shallow depth of field. Photorealistic, 4K quality, professional pharmaceutical photography.",
+
+      "stable_diffusion": "Pharmaceutical compounding laboratory, sterile clean room environment, professional pharmacist preparing customized medication, precision pharmaceutical equipment, USP standards compliance visible, quality assurance emphasis, bright clinical lighting, medical blue white color palette, highly detailed, professional pharmaceutical photography, 8k uhd, dslr, clean aesthetic, high quality, modern medical facility",
+
+      "visual_elements": [
+        "Sterile clean room environment",
+        "Pharmacist in proper protective equipment",
+        "Precision measuring or compounding equipment",
+        "Quality control instruments in background",
+        "USP compliance certificates or standards visible",
+        "Organized, clinical environment",
+        "Emphasis on safety and customization",
+        "Professional pharmaceutical-grade quality"
+      ]
+    },
+
+    "digital_prescribing_platform": {
+      "midjourney": "Modern physician using tablet for e-prescribing, close-up of hands on digital interface showing medication options with pricing, contemporary medical office setting, professional medical attire, warm natural lighting, medical blue and teal interface colors on screen, emphasis on ease of use and technology integration, professional healthcare photography --ar 16:9 --style raw --v 6 --q 2",
+
+      "dalle3": "Professional healthcare provider using a modern tablet for digital prescribing in a contemporary medical office. Close-up shot showing the provider's hands navigating a clean, intuitive interface displaying medication options with transparent pricing. Screen shows eNavvi-style interface with medication comparisons. Natural lighting from window. Medical blue and teal color scheme on the tablet. Professional medical photography, 4K quality, shallow depth of field focusing on the tablet interaction.",
+
+      "stable_diffusion": "Digital health technology, physician using tablet for electronic prescribing, modern medical office, clean interface showing prescription options with prices, professional healthcare photography, natural window lighting, medical blue teal color palette, emphasis on technology ease of use, highly detailed, 8k uhd, dslr, professional depth of field, high quality, contemporary medical setting",
+
+      "visual_elements": [
+        "Tablet or computer showing prescription interface",
+        "Clean, modern UI design on screen",
+        "Healthcare provider's hands interacting with device",
+        "Price transparency visible on interface",
+        "Multiple medication options displayed",
+        "Professional medical setting",
+        "Natural, warm lighting",
+        "Focus on ease of use and efficiency"
+      ]
+    },
+
+    "patient_medication_access": {
+      "midjourney": "Diverse patient receiving prescription medication from pharmacist, modern pharmacy counter, patient showing relief and satisfaction, quality medication packaging visible, professional pharmacy environment, warm approachable lighting, medical blue and white color scheme, emphasis on access and affordability, professional healthcare photography --ar 16:9 --style raw --v 6 --q 2",
+
+      "dalle3": "Photorealistic scene of a diverse patient (middle-aged, genuine smile) receiving prescription medication from a professional pharmacist across a modern pharmacy counter. The medication packaging is clean and professional. Patient appears relieved and satisfied, suggesting affordable access. Warm, welcoming lighting. Medical blue and white color palette. Professional healthcare photography, 4K quality, shallow depth of field, patient-centric composition.",
+
+      "stable_diffusion": "Patient pharmacy interaction, diverse patient receiving medication, professional pharmacist providing prescription, modern pharmacy counter, patient satisfaction and relief expression, quality medication packaging, affordable healthcare access concept, professional healthcare photography, warm approachable lighting, medical blue white colors, highly detailed, 8k uhd, dslr, soft lighting, high quality, patient-centric composition",
+
+      "visual_elements": [
+        "Diverse patient representation",
+        "Professional pharmacist or healthcare provider",
+        "Quality medication packaging",
+        "Modern, clean pharmacy or clinic environment",
+        "Positive patient emotions (relief, satisfaction)",
+        "Professional but warm and approachable mood",
+        "Emphasis on accessibility and quality",
+        "Patient-provider trust visible"
+      ]
+    },
+
+    "healthcare_innovation": {
+      "midjourney": "Conceptual image blending traditional healthcare with digital innovation, medical stethoscope next to modern tablet displaying health technology interface, clean white background with medical blue accents, professional product photography style, emphasis on merging traditional care with modern tools, high-key lighting --ar 16:9 --style raw --v 6 --q 2",
+
+      "dalle3": "Professional product photography style composition showing the intersection of traditional healthcare and digital innovation. A medical stethoscope artfully positioned next to a modern tablet displaying a healthcare technology interface. Clean white background with subtle medical blue and teal accent lighting. High-quality studio lighting. Minimalist, professional aesthetic. 4K detail, sharp focus, medical branding photography style.",
+
+      "stable_diffusion": "Healthcare innovation concept, traditional medical tools combined with modern technology, stethoscope and digital tablet, health tech interface on screen, clean white background, medical blue teal accent colors, professional product photography, high key studio lighting, minimalist composition, highly detailed, 8k uhd, dslr, sharp focus, high quality, medical branding style",
+
+      "visual_elements": [
+        "Traditional medical instruments (stethoscope, prescription pad)",
+        "Modern technology (tablet, smartphone, computer)",
+        "Clean, minimalist composition",
+        "Medical blue and teal brand colors",
+        "High-key or studio lighting",
+        "Professional product photography aesthetic",
+        "Balance between traditional and innovative",
+        "Premium, trustworthy appearance"
+      ]
+    },
+
+    "clinician_empowerment": {
+      "midjourney": "Confident diverse group of healthcare professionals, physicians NPs and PAs, standing together in modern medical facility, professional attire, natural window lighting, medical blue color accents in environment, emphasis on empowerment and collaboration, professional healthcare editorial photography --ar 16:9 --style raw --v 6 --q 2",
+
+      "dalle3": "Professional editorial photograph of a diverse group of confident healthcare providers (physician, nurse practitioner, physician assistant) standing together in a modern medical facility. Natural window lighting creates warm, professional atmosphere. Professional attire with medical blue and teal color accents in environment. Expressions convey competence, collaboration, and empowerment. Photorealistic, 4K quality, professional depth of field, editorial healthcare photography.",
+
+      "stable_diffusion": "Healthcare professionals team, diverse physicians nurse practitioners physician assistants, modern medical facility, confident empowered expressions, professional medical attire, natural window lighting, medical blue teal environmental accents, collaborative team atmosphere, professional editorial healthcare photography, highly detailed, 8k uhd, dslr, professional lighting, high quality, medical editorial style",
+
+      "visual_elements": [
+        "Diverse group of healthcare professionals",
+        "Mix of physicians, NPs, PAs",
+        "Confident, professional demeanor",
+        "Modern medical facility environment",
+        "Natural, flattering lighting",
+        "Professional medical attire",
+        "Collaborative, empowered mood",
+        "Medical blue and teal color accents",
+        "Editorial healthcare photography style"
+      ]
+    }
+  },
+
+  "text_overlay_templates": {
+    "linkedin_stat_callout": {
+      "layout": "Top-left or bottom-left corner",
+      "font": "Bold sans-serif, high contrast",
+      "colors": "White text on medical blue background or medical blue text on white background",
+      "examples": [
+        "73% of clinics report GLP-1 shortages",
+        "$1,200+ saved per patient per month",
+        "300+ medications in shortage nationwide",
+        "Zero fees for prescribers"
+      ]
+    },
+    "instagram_quote_overlay": {
+      "layout": "Centered or bottom third",
+      "font": "Clean sans-serif, readable at small sizes",
+      "colors": "White text with subtle shadow or overlay",
+      "examples": [
+        "Prescribing shouldn't be complicated",
+        "Transparency changes everything",
+        "Quality care, affordable access",
+        "Free for clinicians. Always."
+      ]
+    },
+    "twitter_impact_statement": {
+      "layout": "Centered, large text",
+      "font": "Bold, high impact",
+      "colors": "High contrast for mobile readability",
+      "examples": [
+        "Real-time pricing. Real impact.",
+        "Access. Quality. Transparency.",
+        "Your patients deserve better.",
+        "Prescribe with confidence."
+      ]
+    }
+  },
+
+  "stock_photo_keywords": {
+    "general_search_terms": [
+      "modern healthcare professional tablet",
+      "physician digital prescribing",
+      "medical consultation technology",
+      "pharmacy compounding sterile",
+      "diverse healthcare providers",
+      "patient medication counseling",
+      "digital health innovation",
+      "medical office contemporary",
+      "pharmacist quality control",
+      "telemedicine consultation"
+    ],
+    "recommended_stock_sites": [
+      "Unsplash (free, high quality)",
+      "Pexels (free, good medical selection)",
+      "iStock Medical (premium, authentic)",
+      "Getty Images Healthcare (premium, diverse)",
+      "Science Photo Library (specialized medical)"
+    ]
+  },
+
+  "avoid_in_images": [
+    "Overly staged or fake-looking scenarios",
+    "Stock photo clichés (people pointing at screens, forced smiles)",
+    "Outdated medical equipment or settings",
+    "Unprofessional or cluttered environments",
+    "Poor lighting or low-quality photography",
+    "Obvious branding or competitor products visible",
+    "Prescription labels with readable patient information",
+    "HIPAA-violating content (identifiable patient data)",
+    "Medical procedures or clinical details requiring disclaimers",
+    "Overly clinical or sterile mood (too cold)",
+    "Consumer-focused wellness imagery (too casual)"
+  ],
+
+  "image_generation_best_practices": {
+    "midjourney_tips": [
+      "Use --style raw for photorealistic medical imagery",
+      "Add --q 2 for higher quality details",
+      "Specify --ar 16:9 for LinkedIn, --ar 1:1 for Instagram",
+      "Use /describe command to analyze reference images",
+      "Use seed numbers for consistent branding across campaign"
+    ],
+    "dalle3_tips": [
+      "Be specific about photography style and lighting",
+      "Request 'photorealistic, 4K quality' explicitly",
+      "Specify exact colors for brand consistency",
+      "Describe mood and emotions clearly",
+      "Request 'professional medical photography' for clinical credibility"
+    ],
+    "general_tips": [
+      "Always specify the color palette (medical blue, teal, white)",
+      "Request diverse representation in people",
+      "Specify lighting type (natural window light, studio, etc.)",
+      "Define the mood explicitly (professional yet approachable)",
+      "Include depth of field instructions for focus",
+      "Mention specific camera/photography style for consistency",
+      "Test prompts and iterate for brand consistency",
+      "Save successful prompts for future campaigns"
+    ]
+  }
+}

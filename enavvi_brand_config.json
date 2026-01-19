@@ -1,0 +1,80 @@
+{
+  "brand_name": "eNavvi",
+  "brand_voice": {
+    "attributes": [
+      "Professional yet approachable",
+      "Evidence-based and trustworthy",
+      "Empowering for healthcare providers",
+      "Patient-centric",
+      "Innovative and forward-thinking"
+    ],
+    "tone_guidelines": [
+      "Never oversell or use hype language",
+      "Always back claims with data/evidence when possible",
+      "Respect the intelligence of healthcare professionals",
+      "Avoid medical jargon when targeting patients",
+      "Use clinical terminology appropriately for HCP audiences"
+    ]
+  },
+  "key_messaging_pillars": [
+    "Transparent prescription drug pricing",
+    "Access to quality compound pharmacy network",
+    "Physician-friendly prescribing platform",
+    "Cost-effective alternatives to brand medications",
+    "Solutions for drug shortages",
+    "Personalized medicine through compounding"
+  ],
+  "value_propositions": [
+    "Free platform for clinicians (no fees, no hassle)",
+    "Real-time pricing transparency",
+    "Quality-assured pharmacy partners",
+    "Easy e-prescribing integration",
+    "Comprehensive compound medication options",
+    "Clinical support and dosing protocols"
+  ],
+  "target_audiences": {
+    "primary": "Physicians, NPs, PAs, prescribing clinicians",
+    "secondary": "Patients seeking affordable medication options",
+    "tertiary": "Pharmacists and healthcare administrators"
+  },
+  "common_hashtags": {
+    "linkedin": [
+      "#DigitalHealth",
+      "#HealthcareInnovation",
+      "#CompoundPharmacy",
+      "#Telemedicine",
+      "#PhysicianLeadership",
+      "#MedicalPractice",
+      "#PatientCare",
+      "#HealthTech",
+      "#PrescriptionDrugs",
+      "#ValueBasedCare"
+    ],
+    "twitter": [
+      "#HealthTech",
+      "#DigitalHealth",
+      "#CompoundRx",
+      "#DrugPricing",
+      "#HealthcareAccess"
+    ],
+    "instagram": [
+      "#HealthcareHeroes",
+      "#MedicalCommunity",
+      "#PhysicianLife",
+      "#HealthcareInnovation",
+      "#PatientFirst"
+    ]
+  },
+  "content_topics": [
+    "GLP-1 shortages and alternatives",
+    "Compound semaglutide for weight management",
+    "Tirzepatide compounding solutions",
+    "Prescription cost transparency",
+    "Drug shortage solutions",
+    "Personalized hormone therapy",
+    "Pediatric compounding options",
+    "Dermatology compound formulations",
+    "Pain management alternatives",
+    "Veterinary compounding"
+  ]
+}
